@@ -1,0 +1,16 @@
+<%= simple_form_for(@classroom) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.label :student %>
+    <%= f.collection_select :students_id, Student.all, :id, :name %>
+    <br>
+    <%= f.label :course %>
+    <%= f.collection_select :courses_id, Course.all, :id, :name %>
+    <%= f.input :entry_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
